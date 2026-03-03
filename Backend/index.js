@@ -36,7 +36,7 @@ app.post("/send-booking", async (req, res) => {
       from: "onboarding@resend.dev",
       to: "eceproblemsolver@gmail.com",
     // to: "aryeshsrivastava@gmail.com",
-      subject: "New Booking Request",
+      subject: "New Query",
       html: `
         <h2>New Query</h2>
         <p><b>Name:</b> ${name}</p>
