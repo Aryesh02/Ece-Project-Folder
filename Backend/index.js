@@ -34,11 +34,11 @@ app.post("/send-booking", async (req, res) => {
   try {
     const response = await resend.emails.send({
       from: "onboarding@resend.dev",
-    //   to: "eceproblemsolver@gmail.com",
-    to: "aryeshsrivastava@gmail.com",
+      to: "eceproblemsolver@gmail.com",
+    // to: "aryeshsrivastava@gmail.com",
       subject: "New Booking Request",
       html: `
-        <h2>New Booking</h2>
+        <h2>New Query</h2>
         <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Course:</b> ${course}</p>
