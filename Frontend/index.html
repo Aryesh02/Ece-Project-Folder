@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Electronics & Systems Academy</title>
+
+<title>Electronics & Computer Engineering Academy</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -39,13 +41,10 @@ nav{
 
 .logo{
     font-family:'Orbitron', sans-serif;
-    font-size:24px;
+    font-size:22px;
     font-weight:800;
     background: linear-gradient(90deg,#0f62fe,#6a11cb);
     -webkit-background-clip:text;
-    -moz-background-clip:text;
-    background-clip:text;
-    -webkit-text-fill-color:transparent;
     color:transparent;
 }
 
@@ -59,6 +58,11 @@ nav ul li a{
     text-decoration:none;
     color:#333;
     font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#0f62fe;
 }
 
 .menu-toggle{
@@ -69,7 +73,7 @@ nav ul li a{
 
 /* HERO */
 .hero{
-    padding:80px 6%;
+    padding:90px 6%;
     background:linear-gradient(135deg,#0f62fe,#6a11cb);
     color:white;
     text-align:center;
@@ -77,7 +81,7 @@ nav ul li a{
 
 .hero h1{
     font-size:42px;
-    margin-bottom:20px;
+    margin-bottom:15px;
 }
 
 .hero p{
@@ -93,9 +97,16 @@ nav ul li a{
     border-radius:30px;
     font-weight:600;
     cursor:pointer;
+    transition:0.3s;
 }
 
-/* SECTIONS */
+.btn:hover{
+    background:#0f62fe;
+    color:white;
+    transform:scale(1.05);
+}
+
+/* SECTION */
 section{
     padding:60px 6%;
     text-align:center;
@@ -120,11 +131,13 @@ section h2{
     padding:25px;
     border-radius:15px;
     box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    transition:0.3s;
+    transition: all 0.4s ease;
+    cursor:pointer;
 }
 
 .card:hover{
-    transform:translateY(-6px);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
 
 /* FORM */
@@ -140,7 +153,6 @@ input, textarea, select{
     margin:10px 0;
     border-radius:8px;
     border:1px solid #ddd;
-    font-size:14px;
 }
 
 .contact-btn{
@@ -156,16 +168,14 @@ input, textarea, select{
 
 .contact-btn:disabled{
     opacity:0.7;
-    cursor:not-allowed;
 }
 
-/* MESSAGE BOX */
+/* MESSAGE */
 .message{
     margin-top:15px;
     padding:10px;
     border-radius:8px;
     display:none;
-    font-size:14px;
 }
 
 .success{
@@ -183,10 +193,10 @@ footer{
     background:#111;
     color:white;
     text-align:center;
-    padding:25px 10px;
+    padding:25px;
 }
 
-/* WhatsApp Button */
+/* WHATSAPP */
 .whatsapp-float {
     position: fixed;
     width: 55px;
@@ -203,20 +213,20 @@ footer{
     text-decoration: none;
 }
 
+/* SCROLL ANIMATION */
+.fade-in{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
+}
+
+.fade-in.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
 /* MOBILE */
 @media(max-width:768px){
-
-    .hero{
-        padding:60px 6%;
-    }
-
-    .hero h1{
-        font-size:28px;
-    }
-
-    .hero p{
-        font-size:15px;
-    }
 
     nav ul{
         position:absolute;
@@ -225,10 +235,8 @@ footer{
         background:white;
         flex-direction:column;
         width:200px;
-        text-align:left;
         padding:20px;
         display:none;
-        box-shadow:0 4px 12px rgba(0,0,0,0.1);
     }
 
     nav ul.show{
@@ -238,31 +246,46 @@ footer{
     .menu-toggle{
         display:block;
     }
+
+    .hero h1{
+        font-size:28px;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
 <nav>
-    <div class="logo">Electronics & Systems Academy</div>
+    <div class="logo">ECE & CSE Academy</div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <ul id="navLinks">
         <li><a href="#">Home</a></li>
         <li><a href="#subjects">Subjects</a></li>
+        <li><a href="#internship">Internships</a></li>
         <li><a href="#book">Book Class</a></li>
-        <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
 <div class="hero">
-    <h1>Master Every ECE Subject with Confidence</h1>
-    <p>Online Sessions | Assignment Help | Doubt Clearing</p>
+    <h1>Master ECE & CSE with Industry-Level Skills</h1>
+    <p>Core Subjects • Internships • Practical Learning</p>
     <a href="#book"><button class="btn">Book Online Class</button></a>
 </div>
 
-<section id="subjects">
-    <h2>All ECE Subjects Covered</h2>
+<section class="fade-in">
+    <h2>Why Choose Us?</h2>
+    <div class="cards">
+        <div class="card">✔ 1:1 Doubt Solving</div>
+        <div class="card">✔ Placement Oriented</div>
+        <div class="card">✔ Practical + Theory</div>
+        <div class="card">✔ Internship Support</div>
+    </div>
+</section>
+
+<section id="subjects" class="fade-in">
+    <h2>ECE + CSE Subjects</h2>
     <div class="cards">
         <div class="card">Analog Electronics</div>
         <div class="card">Digital Electronics</div>
@@ -272,109 +295,117 @@ footer{
         <div class="card">VLSI Design</div>
         <div class="card">Microprocessors</div>
         <div class="card">Network Theory</div>
+
+        <div class="card">Operating Systems</div>
+        <div class="card">Computer Networks</div>
+        <div class="card">DBMS</div>
+        <div class="card">Theory of Computation</div>
+        <div class="card">Compiler Design</div>
     </div>
 </section>
 
-<section id="book">
-    <h2>Book Online Class</h2>
+<section id="internship" class="fade-in">
+    <h2>Summer Internships</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Cadence Tool Training</h3>
+            <p>Industry-level VLSI tools</p>
+        </div>
+        <div class="card">
+            <h3>VHDL Design</h3>
+            <p>Digital design with projects</p>
+        </div>
+        <div class="card">
+            <h3>Mini Projects</h3>
+            <p>Build strong resume projects</p>
+        </div>
+    </div>
+</section>
+
+<section id="book" class="fade-in">
+    <h2>Book Class</h2>
     <div class="contact-box">
         <form id="bookingForm">
-            <input type="text" name="name" placeholder="Your Full Name" required>
-            <input type="email" name="email" placeholder="Your Email ID" required>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Email" required>
 
             <select name="course" required>
                 <option value="">Select Course</option>
-                <option>Analog Electronics</option>
-                <option>Digital Electronics</option>
-                <option>Signals & Systems</option>
-                <option>Communication Systems</option>
-                <option>Control Systems</option>
-                <option>VLSI Design</option>
-                <option>Microprocessors</option>
-                <option>Network Theory</option>
+                <option>Operating Systems</option>
+                <option>Computer Networks</option>
+                <option>DBMS</option>
+                <option>Cadence Internship</option>
+                <option>VHDL Internship</option>
             </select>
 
-            <textarea name="requirement" rows="4" placeholder="Assignment Help / Doubt / Full Course..."></textarea>
+            <textarea name="requirement" placeholder="Your Requirement"></textarea>
 
-            <button type="submit" class="contact-btn">Submit Booking Request</button>
+            <button type="submit" class="contact-btn">Submit</button>
             <div id="formMessage" class="message"></div>
         </form>
     </div>
 </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: eceproblemsolver@gmail.com</p>
-    <p>WhatsApp: 8800127583</p>
-</section>
-
 <footer>
-    © 2026 Electronics & Systems Academy
+    © 2026 Electronics & Computer Engineering Academy
 </footer>
 
 <a href="https://wa.me/918800127583" target="_blank" class="whatsapp-float">💬</a>
 
 <script>
+
+/* MENU */
 function toggleMenu(){
     document.getElementById("navLinks").classList.toggle("show");
 }
 
+/* SCROLL ANIMATION */
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".fade-in").forEach(el=>{
+    observer.observe(el);
+});
+
+/* FORM */
 document.getElementById("bookingForm").addEventListener("submit", async function(e){
     e.preventDefault();
 
     const form = e.target;
-    const formData = Object.fromEntries(new FormData(form));
-    const btn = document.querySelector(".contact-btn");
-    const messageBox = document.getElementById("formMessage");
+    const data = Object.fromEntries(new FormData(form));
+    const msg = document.getElementById("formMessage");
 
-    messageBox.style.display = "none";
-
-    if(!formData.name || !formData.email || !formData.course){
-        showMessage("Please fill all required fields.", false);
-        return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if(!emailRegex.test(formData.email)){
-        showMessage("Please enter a valid email.", false);
-        return;
-    }
-
-    btn.innerText = "Sending...";
-    btn.disabled = true;
+    msg.style.display="none";
 
     try{
-        const response = await fetch("https://ece-project-folder.onrender.com/send-booking",{
+        const res = await fetch("https://ece-project-folder.onrender.com/send-booking",{
             method:"POST",
-            headers:{
-                "Content-Type":"application/json"
-            },
-            body:JSON.stringify(formData)
+            headers:{ "Content-Type":"application/json" },
+            body:JSON.stringify(data)
         });
 
-        const result = await response.json();
+        const result = await res.json();
 
-        if(response.ok && result.success){
-            showMessage("Booking request sent successfully!", true);
+        if(result.success){
+            msg.innerText="Success!";
+            msg.className="message success";
+            msg.style.display="block";
             form.reset();
-        } else {
-            showMessage(result.message || "Failed to send booking.", false);
+        }else{
+            throw new Error();
         }
-
-    } catch(error){
-        showMessage("Cannot connect to server. Please try again later.", false);
+    }catch{
+        msg.innerText="Error sending request.";
+        msg.className="message error";
+        msg.style.display="block";
     }
-
-    btn.innerText = "Submit Booking Request";
-    btn.disabled = false;
 });
 
-function showMessage(message, isSuccess){
-    const messageBox = document.getElementById("formMessage");
-    messageBox.innerText = message;
-    messageBox.className = "message " + (isSuccess ? "success" : "error");
-    messageBox.style.display = "block";
-}
 </script>
 
 </body>
